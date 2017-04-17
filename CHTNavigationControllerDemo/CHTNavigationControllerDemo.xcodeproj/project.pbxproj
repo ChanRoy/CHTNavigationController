@@ -13,6 +13,7 @@
 		AEBAB9F71EA4B95600661728 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEBAB9F51EA4B95600661728 /* Main.storyboard */; };
 		AEBAB9F91EA4B95600661728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEBAB9F81EA4B95600661728 /* Assets.xcassets */; };
 		AEBAB9FC1EA4B95600661728 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEBAB9FA1EA4B95600661728 /* LaunchScreen.storyboard */; };
+		AEBABA061EA4BDCB00661728 /* QFHKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBABA051EA4BDCB00661728 /* QFHKNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		AEBAB9F81EA4B95600661728 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEBAB9FB1EA4B95600661728 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AEBAB9FD1EA4B95600661728 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEBABA041EA4BDCB00661728 /* QFHKNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFHKNavigationController.h; sourceTree = "<group>"; };
+		AEBABA051EA4BDCB00661728 /* QFHKNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFHKNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 		AEBAB9EB1EA4B95600661728 /* CHTNavigationControllerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				AEBABA031EA4BDCB00661728 /* CHTNavigationController */,
 				AEBAB9EF1EA4B95600661728 /* AppDelegate.h */,
 				AEBAB9F01EA4B95600661728 /* AppDelegate.m */,
 				AEBAB9F21EA4B95600661728 /* ViewController.h */,
@@ -77,6 +81,16 @@
 				AEBAB9ED1EA4B95600661728 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AEBABA031EA4BDCB00661728 /* CHTNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				AEBABA041EA4BDCB00661728 /* QFHKNavigationController.h */,
+				AEBABA051EA4BDCB00661728 /* QFHKNavigationController.m */,
+			);
+			name = CHTNavigationController;
+			path = ../../CHTNavigationController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +168,7 @@
 				AEBAB9F41EA4B95600661728 /* ViewController.m in Sources */,
 				AEBAB9F11EA4B95600661728 /* AppDelegate.m in Sources */,
 				AEBAB9EE1EA4B95600661728 /* main.m in Sources */,
+				AEBABA061EA4BDCB00661728 /* QFHKNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +327,7 @@
 				AEBABA021EA4B95600661728 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

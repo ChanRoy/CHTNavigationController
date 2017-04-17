@@ -114,9 +114,10 @@
     if (self.navigationController.viewControllers.count) {
         
         NSInteger count = self.navigationController.viewControllers.count;
-        BOOL flag = NO;
+
         if (count > 1) {
-            flag = self.cht_prefersNavigationBarHidden && self.navigationController.viewControllers[count-2].cht_prefersNavigationBarHidden;
+            
+            BOOL flag = self.cht_prefersNavigationBarHidden && self.navigationController.viewControllers[count-2].cht_prefersNavigationBarHidden;
             
             self.cht_interactivePopDisabled = flag;
         }
@@ -125,7 +126,7 @@
     }
     if (self.navigationController && self.cht_prefersNavigationBarHidden == NO) {
         
-        [self cht_getBackView:self.navigationController.navigationBar color:[UIColor grayColor]];
+        [self cht_getBackView:self.navigationController.navigationBar color:[UIColor yellowColor]];
     }
 }
 
@@ -183,6 +184,7 @@
 #endif
 }
 
+//add property: prefersNavigationBarHidden
 - (BOOL)cht_prefersNavigationBarHidden{
     
     return [objc_getAssociatedObject(self, _cmd) boolValue];
@@ -193,6 +195,7 @@
     objc_setAssociatedObject(self, @selector(cht_prefersNavigationBarHidden), @(cht_prefersNavigationBarHidden), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+//add property: interactivePopDisabled
 - (BOOL)cht_interactivePopDisabled{
     
     return [objc_getAssociatedObject(self, _cmd) boolValue];
