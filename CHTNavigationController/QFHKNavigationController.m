@@ -10,6 +10,7 @@
 #import <objc/runtime.h>
 
 #define FSystemVersion          ([[[UIDevice currentDevice] systemVersion] floatValue])
+#define kCustomBarColor 0
 
 @interface QFHKNavigationController () <UINavigationControllerDelegate>
 
@@ -23,18 +24,17 @@
     //设置代理
     __weak QFHKNavigationController *weakSelf = self;
     
-    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)])
-    {        
+    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]){
+        
         self.delegate = weakSelf;
     }
 }
 
 //防止push的时候触发滑动手势造成崩溃
-- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
     
-    if ( [self respondsToSelector:@selector(interactivePopGestureRecognizer)] && animated == YES )
-    {
+    if ( [self respondsToSelector:@selector(interactivePopGestureRecognizer)] && animated == YES ){
+        
         self.interactivePopGestureRecognizer.enabled = NO;
     }
     
@@ -43,10 +43,9 @@
 }
 
 //防止pop的时候触发滑动手势造成崩溃
-- (NSArray *)popToRootViewControllerAnimated:(BOOL)animated
-{
-    if ( [self respondsToSelector:@selector(interactivePopGestureRecognizer)] && animated == YES )
-    {
+- (NSArray *)popToRootViewControllerAnimated:(BOOL)animated{
+    if ( [self respondsToSelector:@selector(interactivePopGestureRecognizer)] && animated == YES ){
+        
         self.interactivePopGestureRecognizer.enabled = NO;
     }
     return  [super popToRootViewControllerAnimated:animated];
@@ -63,15 +62,17 @@
 
 //加载下个vc后打开手势
 #pragma mark - UINavigationControllerDelegate
-- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animate
-{
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animate{
+    
     if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        
         self.interactivePopGestureRecognizer.enabled = !viewController.cht_interactivePopDisabled;
     }    
 
     //防止在根控制器中push卡死
     // if rootViewController, set delegate nil
     if (navigationController.viewControllers.count == 1) {
+        
         navigationController.interactivePopGestureRecognizer.enabled = NO;
         navigationController.interactivePopGestureRecognizer.delegate = nil;
     }
@@ -124,12 +125,15 @@
         
         [self.navigationController setNavigationBarHidden:self.cht_prefersNavigationBarHidden animated:animated];
     }
+#if kCustomBarColor
     if (self.navigationController && self.cht_prefersNavigationBarHidden == NO) {
         
         [self cht_getBackView:self.navigationController.navigationBar color:[UIColor yellowColor]];
     }
+#endif
 }
 
+#if kCustomBarColor
 #pragma mark - 设navigationBar的背景颜色
 - (void)cht_getBackView:(UIView *)view color:(UIColor *)color{
     
@@ -183,6 +187,8 @@
     }
 #endif
 }
+
+#endif
 
 //add property: prefersNavigationBarHidden
 - (BOOL)cht_prefersNavigationBarHidden{

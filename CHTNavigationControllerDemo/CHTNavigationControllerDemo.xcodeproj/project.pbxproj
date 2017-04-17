@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AEB4C3B31EA4FB150025776F /* CHTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB4C3B21EA4FB150025776F /* CHTViewController.m */; };
+		AEB4C3B61EA4FD280025776F /* CHTPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB4C3B51EA4FD280025776F /* CHTPopViewController.m */; };
 		AEBAB9EE1EA4B95600661728 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBAB9ED1EA4B95600661728 /* main.m */; };
 		AEBAB9F11EA4B95600661728 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBAB9F01EA4B95600661728 /* AppDelegate.m */; };
-		AEBAB9F41EA4B95600661728 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBAB9F31EA4B95600661728 /* ViewController.m */; };
 		AEBAB9F71EA4B95600661728 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEBAB9F51EA4B95600661728 /* Main.storyboard */; };
 		AEBAB9F91EA4B95600661728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEBAB9F81EA4B95600661728 /* Assets.xcassets */; };
 		AEBAB9FC1EA4B95600661728 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEBAB9FA1EA4B95600661728 /* LaunchScreen.storyboard */; };
@@ -17,12 +18,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AEB4C3B11EA4FB150025776F /* CHTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTViewController.h; sourceTree = "<group>"; };
+		AEB4C3B21EA4FB150025776F /* CHTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTViewController.m; sourceTree = "<group>"; };
+		AEB4C3B41EA4FD280025776F /* CHTPopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTPopViewController.h; sourceTree = "<group>"; };
+		AEB4C3B51EA4FD280025776F /* CHTPopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTPopViewController.m; sourceTree = "<group>"; };
 		AEBAB9E91EA4B95600661728 /* CHTNavigationControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHTNavigationControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEBAB9ED1EA4B95600661728 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AEBAB9EF1EA4B95600661728 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AEBAB9F01EA4B95600661728 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AEBAB9F21EA4B95600661728 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AEBAB9F31EA4B95600661728 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		AEBAB9F61EA4B95600661728 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AEBAB9F81EA4B95600661728 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEBAB9FB1EA4B95600661728 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -64,8 +67,10 @@
 				AEBABA031EA4BDCB00661728 /* CHTNavigationController */,
 				AEBAB9EF1EA4B95600661728 /* AppDelegate.h */,
 				AEBAB9F01EA4B95600661728 /* AppDelegate.m */,
-				AEBAB9F21EA4B95600661728 /* ViewController.h */,
-				AEBAB9F31EA4B95600661728 /* ViewController.m */,
+				AEB4C3B11EA4FB150025776F /* CHTViewController.h */,
+				AEB4C3B21EA4FB150025776F /* CHTViewController.m */,
+				AEB4C3B41EA4FD280025776F /* CHTPopViewController.h */,
+				AEB4C3B51EA4FD280025776F /* CHTPopViewController.m */,
 				AEBAB9F51EA4B95600661728 /* Main.storyboard */,
 				AEBAB9F81EA4B95600661728 /* Assets.xcassets */,
 				AEBAB9FA1EA4B95600661728 /* LaunchScreen.storyboard */,
@@ -165,9 +170,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEBAB9F41EA4B95600661728 /* ViewController.m in Sources */,
+				AEB4C3B31EA4FB150025776F /* CHTViewController.m in Sources */,
 				AEBAB9F11EA4B95600661728 /* AppDelegate.m in Sources */,
 				AEBAB9EE1EA4B95600661728 /* main.m in Sources */,
+				AEB4C3B61EA4FD280025776F /* CHTPopViewController.m in Sources */,
 				AEBABA061EA4BDCB00661728 /* QFHKNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
