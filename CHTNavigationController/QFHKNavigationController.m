@@ -114,7 +114,7 @@
     
     if (self.navigationController.viewControllers.count) {
         
-        if (FSystemVersion > 10.0) {
+        if (FSystemVersion < 10.0) {
             NSInteger count = self.navigationController.viewControllers.count;
             
             if (count > 1) {
