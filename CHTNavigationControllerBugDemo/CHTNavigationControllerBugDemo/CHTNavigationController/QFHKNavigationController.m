@@ -114,17 +114,16 @@
     
     if (self.navigationController.viewControllers.count) {
         
-        if (FSystemVersion > 10.0) {
-            NSInteger count = self.navigationController.viewControllers.count;
+        /*
+        NSInteger count = self.navigationController.viewControllers.count;
+
+        if (count > 1) {
             
-            if (count > 1) {
-                
-                BOOL flag = self.cht_prefersNavigationBarHidden && self.navigationController.viewControllers[count-2].cht_prefersNavigationBarHidden;
-                
-                self.cht_interactivePopDisabled = flag;
-            }
+            BOOL flag = self.cht_prefersNavigationBarHidden && self.navigationController.viewControllers[count-2].cht_prefersNavigationBarHidden;
+            
+            self.cht_interactivePopDisabled = flag;
         }
- 
+        */
         [self.navigationController setNavigationBarHidden:self.cht_prefersNavigationBarHidden animated:animated];
     }
 #if kCustomBarColor
