@@ -1,28 +1,29 @@
 //
-//  QFHKNavigationController.m
-//  QFangWangHK
+//  CHTNavigationController.m
+//  CHTNavigationControllerDemo
 //
-//  Created by cht on 16/3/1.
-//  Copyright © 2016年 qfangwanghk. All rights reserved.
+//  Created by cht on 2017/4/22.
+//  Copyright © 2017年 cht. All rights reserved.
 //
 
-#import "QFHKNavigationController.h"
+#import "CHTNavigationController.h"
+
 #import <objc/runtime.h>
 
 #define FSystemVersion          ([[[UIDevice currentDevice] systemVersion] floatValue])
 #define kCustomBarColor 0
 
-@interface QFHKNavigationController () <UINavigationControllerDelegate>
+@interface CHTNavigationController ()<UINavigationControllerDelegate>
 
 @end
 
-@implementation QFHKNavigationController
+@implementation CHTNavigationController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     //设置代理
-    __weak QFHKNavigationController *weakSelf = self;
+    __weak typeof(self) weakSelf = self;
     
     if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]){
         
@@ -67,8 +68,8 @@
     if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
         
         self.interactivePopGestureRecognizer.enabled = !viewController.cht_interactivePopDisabled;
-    }    
-
+    }
+    
     //防止在根控制器中push卡死
     // if rootViewController, set delegate nil
     if (navigationController.viewControllers.count == 1) {
@@ -77,6 +78,7 @@
         navigationController.interactivePopGestureRecognizer.delegate = nil;
     }
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -170,7 +172,7 @@
                 ((UIVisualEffectView *)view).hidden = YES;
                 
             }else{
-            
+                
                 [view.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
                 
                 UIView *overlay = [[UIView alloc] initWithFrame:view.bounds];

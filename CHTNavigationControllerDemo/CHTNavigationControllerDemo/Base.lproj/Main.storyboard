@@ -139,7 +139,7 @@
         <!--Navigation Controller-->
         <scene sceneID="6zj-3l-Oty">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2cS-bS-pU6" customClass="QFHKNavigationController" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2cS-bS-pU6" customClass="CHTNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gUY-wK-Wic">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
