@@ -113,7 +113,7 @@
     [self cht_viewWillAppear:animated];
     
     if (self.navigationController.viewControllers.count) {
-        
+#if 1
         if (FSystemVersion < 10.0) {
             NSInteger count = self.navigationController.viewControllers.count;
             
@@ -124,7 +124,7 @@
                 self.cht_interactivePopDisabled = flag;
             }
         }
- 
+#endif
         [self.navigationController setNavigationBarHidden:self.cht_prefersNavigationBarHidden animated:animated];
     }
 #if kCustomBarColor
