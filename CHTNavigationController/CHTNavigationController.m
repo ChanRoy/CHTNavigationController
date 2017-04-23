@@ -11,7 +11,6 @@
 #import <objc/runtime.h>
 
 #define FSystemVersion          ([[[UIDevice currentDevice] systemVersion] floatValue])
-#define kCustomBarColor 0
 
 @interface CHTNavigationController ()<UINavigationControllerDelegate>
 
@@ -115,7 +114,7 @@
     [self cht_viewWillAppear:animated];
     
     if (self.navigationController.viewControllers.count) {
-#if 1
+
         if (FSystemVersion < 10.0) {
             NSInteger count = self.navigationController.viewControllers.count;
             
@@ -126,18 +125,19 @@
                 self.cht_interactivePopDisabled = flag;
             }
         }
-#endif
+
         [self.navigationController setNavigationBarHidden:self.cht_prefersNavigationBarHidden animated:animated];
     }
-#if kCustomBarColor
-    if (self.navigationController && self.cht_prefersNavigationBarHidden == NO) {
+
+    if (self.cht_barTintColor) {
         
-        [self cht_getBackView:self.navigationController.navigationBar color:[UIColor yellowColor]];
+        if (self.navigationController && self.cht_prefersNavigationBarHidden == NO) {
+            
+            [self cht_getBackView:self.navigationController.navigationBar color:[UIColor yellowColor]];
+        }
     }
-#endif
 }
 
-#if kCustomBarColor
 #pragma mark - 设navigationBar的背景颜色
 - (void)cht_getBackView:(UIView *)view color:(UIColor *)color{
     
@@ -192,8 +192,6 @@
 #endif
 }
 
-#endif
-
 //add property: prefersNavigationBarHidden
 - (BOOL)cht_prefersNavigationBarHidden{
     
@@ -207,13 +205,24 @@
 
 //add property: interactivePopDisabled
 - (BOOL)cht_interactivePopDisabled{
-    
+
     return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
 
 - (void)setCht_interactivePopDisabled:(BOOL)cht_interactivePopDisabled{
     
     objc_setAssociatedObject(self, @selector(cht_interactivePopDisabled), @(cht_interactivePopDisabled), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+//add property: barTintColor
+- (UIColor *)cht_barTintColor{
+    
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+- (void)setCht_barTintColor:(UIColor *)cht_barTintColor{
+    
+    objc_setAssociatedObject(self, @selector(cht_barTintColor), cht_barTintColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

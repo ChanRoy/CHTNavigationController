@@ -7,6 +7,7 @@
 //
 
 #import "CHTViewController.h"
+#import "CHTNavigationController.h"
 
 @interface CHTViewController ()
 
@@ -16,6 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+//    self.cht_barTintColor = [UIColor yellowColor];
     
     if (self.navigationItem && self.navigationController.viewControllers.count > 1) {
         [self creatBackBtn];

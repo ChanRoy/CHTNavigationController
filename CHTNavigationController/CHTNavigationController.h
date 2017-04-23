@@ -15,10 +15,22 @@
 
 @end
 
+
 @interface UIViewController (CHTNavigationBarHidden)
 
+/**
+ 设置UINavigationBar的显示和隐藏
+ */
 @property (nonatomic, assign) BOOL cht_prefersNavigationBarHidden;
 
+/**
+ 设置当前界面是否打开系统边界返回手势
+ */
 @property (nonatomic, assign) BOOL cht_interactivePopDisabled;
+
+/**
+ 设置UINavigationBar的颜色
+ */
+@property (nonatomic, strong) UIColor *cht_barTintColor;
 
 @end

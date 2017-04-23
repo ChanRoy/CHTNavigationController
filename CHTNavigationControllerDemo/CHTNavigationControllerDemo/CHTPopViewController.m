@@ -17,6 +17,8 @@
 - (IBAction)popEvent:(id)sender {
     
     [self.navigationController popViewControllerAnimated:YES];
+    
+    
 }
 
 - (void)viewDidLoad {
