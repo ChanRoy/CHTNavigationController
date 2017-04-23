@@ -11,15 +11,15 @@
 
 ![](https://github.com/ChanRoy/CHTNavigationController/blob/master/CHTNavigationControllerDemo.gif)
 
-### 下面简要说明下前面提到的四个问题：
+## 下面简要说明下前面提到的四个问题：
 
-- 解决自定义`导航栏返回按钮`后系统返回手势失效的问题：
+### 解决自定义`导航栏返回按钮`后系统返回手势失效的问题：
 
 主要是继承系统的`UINavigationController`，然后在适当的时候打开和关闭系统的返回手势`interactivePopGestureRecognizer`。
 
 具体可查看`CHTNavigationController.m`，不再赘述。
 
-- 解决从有`UINavigationBar`的界面跳转到没有`UINavigationBar`的界面时的过渡问题：
+### 解决从有`UINavigationBar`的界面跳转到没有`UINavigationBar`的界面时的过渡问题：
 
 参考了Sunny大神的[FDFullscreenPopGesture](https://github.com/forkingdog/FDFullscreenPopGesture) 这个库。
 
@@ -31,7 +31,7 @@ self.cht_prefersNavigationBarHidden = YES;
 ```
 即可。
 
-- 解决由于以上第2点导致的`UINavigationBar`错乱的问题(针对iOS10以下系统)：
+### 解决由于以上第2点导致的`UINavigationBar`错乱的问题(针对iOS10以下系统)：
 
 这个Bug可以查看一下`FDFullscreenPopGesture`这个[Issue97](https://github.com/forkingdog/FDFullscreenPopGesture/issues/97)。
 
@@ -51,7 +51,7 @@ self.cht_prefersNavigationBarHidden = YES;
 
 各位有更好的方法，欢迎issue。
 
-- 解决`UINavigationBar`的全局颜色设置问题。 
+### 解决`UINavigationBar`的全局颜色设置问题。 
 
 提供一个接口：`cht_barTintColor`方便设置UINavigationBar的颜色。
 
